@@ -81,8 +81,10 @@ SessionManagementScreen {
             }
 
             // Steven-Added
+            property bool userTyped: false
+
             onTextChanged: {
-                if (text.length === 4 && sessionManager.lockScreenUiVisible) {
+                if (userTyped && text.length === 4 && sessionManager.lockScreenUiVisible) {
                     sessionManager.startLogin();
                 }
             }
@@ -91,10 +93,11 @@ SessionManagementScreen {
             //this cannot be in keys.onLeftPressed as then it doesn't reach the password box
             Keys.onPressed: event => {
                 if (event.key === Qt.Key_Space) {
-                    sessionManager.spacePressed();
                     event.accepted = true;
+                    sessionManager.spacePressed();
                     return;
                 }
+                userTyped = true
                 if (event.key === Qt.Key_Left && !text) {
                     sessionManager.userList.decrementCurrentIndex();
                     event.accepted = true
