@@ -1,6 +1,0 @@
-[Desktop Entry]
-Exec=/home/steve/.local/bin/toggle_fn.sh
-Icon=application-x-shellscript
-Name=toggle_fn.sh
-Type=Application
-X-KDE-AutostartScript=true

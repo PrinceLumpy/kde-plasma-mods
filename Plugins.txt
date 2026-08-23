@@ -2,6 +2,7 @@ https://github.com/luisbocanegra/kde-snap-assist/tree/plasma6
 
 Themes
 - gently
+
 21426450
 111623432
 806779625
